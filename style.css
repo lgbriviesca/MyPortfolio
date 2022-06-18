@@ -1,0 +1,984 @@
+@font-face {
+    font-family: "Montserrat";
+    src: url("Montserrat/static/Montserrat-Regular.ttf"), 
+    url("Montserrat/static/Montserrat-SemiBold.ttf");
+}
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  background-color: rgb(24, 26, 35); 
+    font-family: "Montserrat";
+}
+
+/* ----------------------BODY----------------------------- */
+
+body{
+    font-size: 18px;
+}
+
+/* --------------------HEADER-------------------- */
+
+header{
+    display: flex; /*para que los elementos se vean alineados SÓLO SE USAN EN LOS CONTENEDORES -LOS ELEMENTOS PADRE-*/
+    justify-content:flex-end; /*para que la lista se vayan a la derecha*/
+    align-items: center;
+    padding: .5rem 1.25rem;
+    color: #ffffff;
+    margin-bottom: 2vw;
+}
+
+input#menu{ /*como quiero seleccionar las tres barritas (checar el checkbox) pero que se oculte el cuadrito blanco del checkbox porque se ve feo, lo escondo*/
+    visibility: hidden;
+    position: sticky;
+}
+
+ul{
+    width: 100%;
+    list-style-type: none; /*como estos son li (elementos de lista unorder ul), por default tienen el puntito de lista, entonces se lo borro con esta propiedad */
+    height: 37%;
+    position: absolute;
+    right: 100%; /*esto es para coultar el menu, pues al darle 100%, se sale de la pantalla y desaparece */
+    transition: all 300ms linear; /*esto significa que cuando vuelva a aparecer (con el siguiente input de la linea 136 y 137), la aparición no sea abrupta, sino progresiva*/
+    z-index: 1;
+    text-align:center;
+    opacity: 95%;
+    text-transform:uppercase; 
+}
+
+input#menu:checked ~ ul{ /*con esto, le digo que el menu de las tres rayitas, cuando le de click, (o sea cheque el checkbox porque tengo que recordar que este es un checkbox) cuelva a right 0, o sea, que vuelva a aparecer*/
+    right: 0; 
+}
+
+li{
+    padding-top: 20px;
+    font-weight: bold;
+    color:white;
+}
+
+a:link, a:visited{
+    text-decoration: none;
+    color: #ffffff; 
+}
+
+
+/* --------------------GENERAL-------------------- */
+
+section{
+    margin-left: 10%;
+    margin-right: 10%;
+    padding-top: 10%;
+}
+
+main{
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+}
+
+h3{
+    font-size: 8vw;
+    color: #34B0BE;
+    text-align: center;
+    padding-bottom: 25px;
+}
+
+/* --------------------HOME-------------------- */
+
+#homeContGral{
+    display: flex;
+    position: relative;
+}
+
+#homeContainerTituloIzq{
+display: flex;
+width: 40vw;
+flex-direction: column;
+position:absolute;
+margin-left: 5vw;
+background-color: transparent;
+top: -2vw
+}
+
+#p1Izq{
+    color: #ffffff;
+    font-size: 5.5vw;
+    background-color: transparent;
+}
+
+#p2Izq{
+    font-size: 15vw;
+    color: #34B0BE;
+    font-weight: bold;
+    line-height: 10vw;
+    margin-left: -1vw;
+    background-color: transparent;
+} 
+
+hr{
+    color: #d1ceca;
+    width: 30vw;
+    margin-top: 2vw;
+    margin-bottom: 2vw;
+    background-color: transparent;
+}
+
+.p3Izq{
+    color: #ffffff;
+    font-size: 4vw;
+    background-color: transparent;
+} 
+
+/* #cvButton{
+    background-color: #34B0BE;
+    width: 20vw;
+    height: 7vw;
+  text-align: center;
+    border-radius: 1vw;
+    margin-top: 3vw;
+    margin-left: 4vw;
+}
+
+#cvButton>p{
+    margin-top: 2vw;
+    background-color: transparent;
+    color: white;
+    font-size: 2vw;
+    font-weight: bold;
+} */
+
+#homeContainerTituloDer{
+    display: flex;
+    position: absolute;
+    right: 0;
+    flex-direction: column;
+    margin-right: 5vw;
+    margin-top: 2vw;
+    background-color: transparent;
+}
+
+#p1Der{
+    color: #34B0BE;
+    font-size: 4.5vw;
+    background-color: transparent;
+}
+
+#p2Der{
+    color: #ffffff;
+    font-size: 4vw;
+    background-color: transparent;
+}
+
+#homeContainerTituloDerIcons{
+    display: flex;
+    flex-direction: row;
+    justify-content:center;
+    background-color: transparent;
+    width: 100%;
+    margin-top: 2vw;
+}
+
+.iconContainerPres{
+  display: flex;
+    background-color: #d1ceca;
+    width: 7vw;
+    height: 7vw;
+    justify-content: center;
+    border-radius: 50%;
+}
+
+.iconContainerPres1{
+    display: flex;
+      background-color: #d1ceca;
+      width: 7vw;
+      height: 7vw;
+      justify-content: center;
+      border-radius: 50%;
+      margin-left: 2.5vw;
+      margin-right: 2.5vw;
+  }
+
+.iconDer{
+    background-color: transparent;
+    width:6vw;
+
+}
+
+
+#contactButtons{
+    background-color:transparent;
+  text-align: center;
+    border-radius: 1vw;
+    margin-top: .5vw;
+}
+
+#homeContainer1{
+    display: flex;
+    justify-content: center;
+}
+
+#circuloFondo{
+    display: flex;
+    background-color: #404058;
+    border-radius:  50%;
+    width: 60vw;
+    height: 60vw;
+    justify-content: center; 
+    padding-top: 4vw;
+}
+
+#fotoMia{
+    height: 56vw;
+    background-color: transparent;
+}
+
+#homeContainer2{
+    display: flex;
+    justify-content: center;
+}
+
+#containerTresLogos{
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-gap: 4vw;
+    width: 70%;
+    background-color: #404058;
+    padding: 5vw;
+    border-radius: 4vw;
+    justify-items: center;
+}
+
+.contenedoresTresLogos{
+    display: flex;
+    width: 25vw;
+    border-radius: 2.5vw;
+    background-color: #d1ceca;
+    justify-content:space-evenly;
+    padding: 1vw;
+}
+
+.homeTresLogos{
+    width: 20vw;
+    background-color: transparent;
+}
+
+
+/* -----------------ACERCA DE MÍ-------------- */
+
+#presentacion{
+    text-align: center;
+    color: #d1ceca;
+}
+
+
+/* -----------------SERVICIOS-------------- */
+
+#seccionServ{
+    margin-left: 5%;
+    margin-right: 5%;
+    padding-top: 10%;
+    width: 95%;
+}
+
+#serviciosContainer{
+  display: flex;
+  overflow-x:scroll;
+} 
+
+#serviciosContainerUseless{
+ display: flex;
+}
+
+/*.contenedorBlanco1{
+    display: flex;
+    height: 15em;
+    width: 12em;
+    background-color: white;
+    border-radius: 5px;
+    justify-content:center;
+        text-align: center;
+        position: relative;
+} 
+
+#contenedorBlanco1{
+    display: flex;
+    height: 15em;
+    width: 12em;
+    background-color: white;
+    border-radius: 5px;
+    margin-right: 2em; 
+    margin-left: 2em;
+    justify-content:center;
+        text-align: center;
+        position: relative;
+}  */
+
+.contenedorBlanco1{
+    display: flex;
+    height: 80vw;
+    width: 60vw;
+    background-color: white;
+    border-radius: 5px;
+    flex-direction: column;
+    justify-content:center;
+    text-align: center;
+    position: relative;
+}
+
+#contenedorBlanco1{
+    display: flex;
+    height: 80vw;
+    width: 60vw;
+    background-color: white;
+    border-radius: 5px;
+    flex-direction: column;
+    justify-content:center;
+    text-align: center;
+    position: relative;
+    margin-right: 2em; 
+    margin-left: 2em;
+} 
+
+.servIconosFondo{
+    position:absolute;
+    right: 0em;
+    top:0em;
+    background-color: transparent;
+    width: 60vw;
+    z-index: 1;
+}
+
+.servSubtitulos{
+    background-color: white;
+    font-size: 6vw;
+    margin: 1em 1em;
+    font-weight: bold;
+}
+.servBody{
+    background-color: white;
+    color: #d1ceca;
+    font-size: 4vw;
+}
+.servIconos{
+    background-color: transparent;
+   width: 30vw;
+   height: 30vw;
+   align-self: center;
+   z-index: 2;
+}
+
+/* --------------MIS HABILIDADES----------- */
+
+#barsContainer{
+
+    width: 100%;
+}
+
+.barsBack{
+    height:15px;
+    width:100%;
+    border-radius:  15px;
+    background-color: #ffffff;
+}
+
+#bar1{
+
+    height:15px;
+    width: 72%;
+    border-radius:  15px;
+    background-color: #34B0BE;
+    position: absolute; 
+}
+
+#bar2{
+
+    height:15px;
+    width: 70%;
+    border-radius:  15px;
+    background-color: #34B0BE;
+    position: absolute; 
+}
+
+#bar3{
+
+    height:15px;
+    width: 58%;
+    border-radius:  15px;
+    background-color: #34B0BE;
+    position: absolute; 
+}
+
+#barsTitulo1{
+    display: flex;
+    color: white;
+    justify-content: space-between;
+    flex-direction: row;
+    margin-right: 4%;
+    padding-bottom: 1%;
+    padding-top: 1%;
+}
+
+#barsTitulo2{
+    display: flex;
+    color: white;
+    justify-content: space-between;
+    flex-direction: row;
+    margin-right: 10%;
+    padding-bottom: 1%;
+    padding-top: 1%;
+}
+
+#barsTitulo3{
+    display: flex;
+    color: white;
+    justify-content: space-between;
+    flex-direction: row;
+    margin-right: 26.5%;
+    padding-bottom: 1%;
+    padding-top: 1%;
+}
+
+p2{
+   color: #34B0BE;
+}
+
+
+/* --------------MI PORTAFOLIO---------- */
+
+
+/* --------------CONTACTO---------- */
+
+#contactContainer{
+    display: flex;
+    flex-direction: column;
+}
+
+#contenedorBlanco2Izq{
+    display: flex;
+    height: 45vw;
+    width: 48vw;
+    background-color: white;
+    justify-content:center;
+    text-align: center;
+    position: relative; 
+    flex-direction: column;
+    margin-bottom: 10vw;
+    margin-left: -5vw;
+    border-radius: 5px;
+}
+
+#contenedorBlanco2Der{
+    display: flex;
+    height: 45vw;
+    width: 48vw;
+    background-color: white;
+    justify-content:center;
+    text-align: center;
+    position: relative; 
+    flex-direction: column;
+    margin-bottom: 10vw;
+    margin-right: -5vw;
+    border-radius: 5px;
+    align-self: flex-end;
+}
+
+.contactIconosFondo{
+    position:absolute;
+    right: 0em;
+    top:0em;
+    background-color: transparent;
+    width: 48vw;
+    z-index: 1; 
+    border-radius: 5px;
+}
+
+.contactSubtitulos{
+    background-color: white;
+    font-size: 4vw;
+   margin: 2vw 2vw; 
+    font-weight: bold;
+}
+.contactBody{
+    background-color: white;
+    color: #d1ceca;
+    font-size: 4vw;
+}
+.contactIconos{
+    background-color: transparent;
+   width: 20vw;
+   height: 20vw;
+   align-self: center;
+   z-index: 2;
+}
+
+/* --------------FOOTER--------- */
+
+footer{
+    display: flex;
+    background-color: #404058;
+    height: 12vw;
+    justify-content: center;
+    margin-top: 10vw;
+}
+
+footer>p{
+    font-size: 4vw;
+    color: #34B0BE;
+    text-align: center;
+    align-self: center;
+    background-color: transparent;
+}
+
+/* --------------MOBILE FIRST ACABA; A PARTIR DE AQUÍ SON LAS CONFIG DE DESKTOP------------- */
+
+
+
+@media only screen and (min-width:760px) { /*esto para usar el menu en pantallas como de tablet; siempre que sea menorde estos pixeles, se aplicarán las siguientes propiedades*/
+
+    header{
+        margin-bottom: 4vw;
+        display: flex;
+        position:sticky;
+        top: 0;
+        opacity: 96%;
+        z-index: 1;
+        }
+    
+    header>div>label{
+        display: none; /*esto es para desaparecer el label, o sea, la imagen de cactus de la derecha que contiene el menu (checkbox)*/
+    }
+
+    input#menu ~ ul{
+        position: static;
+        display: flex;
+    }
+
+   li{
+        padding-left: 1.5rem;
+        padding-top: 0rem;
+    }
+
+    h3{
+        font-size: 45px;
+        color: #34B0BE;
+        text-align: center;
+        padding-bottom: 25px;
+    }
+
+    a:hover{
+        text-decoration-color: green;
+    }
+
+/* --------------------HOME-------------------- */
+
+#p3Izq{
+    color: #ffffff;
+    font-size: 4vw;
+    background-color: transparent;
+    letter-spacing: -1px;
+} 
+
+#homeContainerTituloDer{
+    display: flex;
+    position: absolute;
+    flex-direction: column;
+    margin-right: 5vw;
+    margin-top: 2vw;
+    background-color: transparent;
+    margin-right: 15vw;
+}
+
+hr{
+    color: #d1ceca;
+    width: 30vw;
+    height: .3vw;
+    margin-top: 2vw;
+    margin-bottom: 2vw;
+    background-color: #d1ceca;
+}
+
+#p1Der{
+    color: #34B0BE;
+    font-size: 3.5vw;
+    background-color: transparent;
+}
+
+#p2Der{
+    color: #ffffff;
+    font-size: 3vw;
+    background-color: transparent;
+}
+
+#homeContainerTituloDerIcons{
+    display: flex;
+    flex-direction: row;
+    justify-content:flex-start;
+    background-color: transparent;
+    width: 100%;
+    margin-top: 1vw;
+}
+
+.iconContainerPres{
+  display: flex;
+    background-color: #d1ceca;
+    width: 5vw;
+    height: 5vw;
+    justify-content: center;
+    border-radius: 50%;
+}
+
+.iconContainerPres1{
+    display: flex;
+      background-color: #d1ceca;
+      width: 5vw;
+      height: 5vw;
+      justify-content: center;
+      border-radius: 50%;
+      margin-left: 2vw;
+      margin-right: 2vw;
+  }
+
+.iconDer{
+    background-color: transparent;
+    width:2vw;
+}
+
+
+#circuloFondo{
+    display: flex;
+    background-color: #404058;
+    border-radius:  50%;
+    width: 50vw;
+    height: 50vw;
+    justify-content: center; 
+    padding-top: 3vw;
+}
+
+#fotoMia{
+    height: 40vw;
+    background-color: transparent;
+}
+
+#homeContainer2{
+    display: flex;
+    justify-content: center;
+    margin-top: -7vw;
+}
+
+#containerTresLogos{
+    display: flex;
+    width: 80%;
+    background-color: #404058;
+    padding: 4vw 7vw 4vw 7vw;
+    justify-content:space-around;
+    border-radius: 1vw;
+}
+
+.contenedoresTresLogos{
+    display: flex;
+    width: 18vw;
+    border-radius: 1vw;
+    background-color: #d1ceca;
+    justify-content:space-around;
+    padding: 1vw;
+}
+
+.homeTresLogos{
+    width: 9vw;
+    background-color: transparent;
+}
+
+
+.iconDer{
+    background-color: transparent;
+    width:4vw;
+}
+
+#contactButtons{
+    background-color:transparent;
+    width: 20vw;
+    height: 7vw;
+  text-align: center;
+    border-radius: 1vw;
+    margin-top: .5vw;
+}
+
+/* -----------------ACERCA DE MÍ-------------- */
+
+#presentacion{
+    font-size: 3vw;
+    text-align: center;
+    color: #d1ceca;
+}
+
+
+/* -----------------SERVICIOS-------------- */
+
+
+#serviciosContainer{
+    display: flex;
+    justify-content:space-evenly;
+ } 
+
+    #serviciosContainerUseless{
+        display: flex;
+    }
+
+    .contenedorBlanco1{
+        display: flex;
+        height: 30vw;
+        width: 23vw;
+        background-color: white;
+        flex-direction: column;
+        justify-content:center;
+        text-align: center;
+        position: relative;
+    }
+
+    #contenedorBlanco1{
+        display: flex;
+        height: 30vw;
+        width: 23vw;
+        background-color: white;
+        flex-direction: column;
+        justify-content:center;
+        text-align: center;
+        position: relative;
+        margin-right: 5vw; 
+        margin-left: 5vw;
+    } 
+
+    .servIconosFondo{
+        position:absolute;
+        right: 0em;
+        top:0em;
+        background-color: transparent;
+        width: 23vw;
+        z-index: 1;
+    }
+
+    .servSubtitulos{
+        background-color: white;
+        font-size: 2vw;
+        margin: 1em 1em;
+    }
+    .servBody{
+        background-color: white;
+        color: #d1ceca;
+        font-size: 1.4vw;
+        margin-top: 1em;
+    }
+    .servIconos{
+        background-color: transparent;
+       width: 10vw;
+       height: 10vw;
+       align-self: center;
+       z-index: 2;
+    }
+
+    /* --------------MI PORTAFOLIO---------- */
+
+    #miPortContainer{
+        display: flex;
+        margin-left: -8vw;
+        margin-right: -10vw;
+    }
+
+    .miPortimg{
+        width: 40vw;
+        margin-inline-end: 2.5vw;
+    }
+
+  /* --------------CONTACTO---------- */
+
+  #contactContainer{
+      margin-top: 6vw;
+} 
+
+  #contenedorBlanco2Izq{
+    display: flex;
+    height: 20vw;
+    width: 20vw;
+    background-color: white;
+    justify-content:center;
+    text-align: center;
+    position: relative; 
+    flex-direction: column;
+    margin-left: 5vw;
+    border-radius: 5px;
+}
+
+#contenedorBlanco2Der{
+    display: flex;
+    height: 20vw;
+    width: 20vw;
+    background-color: white;
+    justify-content:center;
+    text-align: center;
+    position: relative; 
+    flex-direction: column;
+    margin-right: 5vw;
+    border-radius: 5px;
+    align-self: flex-end;
+    margin-top: -4vw;
+}
+
+.contactIconosFondo{
+    position:absolute;
+    right: 0em;
+    top:0em;
+    background-color: transparent;
+    width: 20vw;
+    z-index: 1; 
+    border-radius: 5px;
+}
+
+.contactSubtitulos{
+    background-color: white;
+    font-size: 2vw;
+   margin: 1vw 1vw; 
+    font-weight: bold;
+}
+.contactBody{
+    background-color: white;
+    color: #d1ceca;
+    font-size: 1.5vw;
+}
+.contactIconos{
+    background-color: transparent;
+   width: 8.5vw;
+   height: 8.5vw;
+   align-self: center;
+   z-index: 2;
+}
+ 
+/* --------------FOOTER--------- */
+
+footer{
+    display: flex;
+    background-color: #404058;
+    height: 12vw;
+    justify-content: center;
+    margin-top: 4vw;
+}
+
+footer>p{
+    font-size: 1.5vw;
+    color: #34B0BE;
+    text-align: center;
+    align-self: center;
+    background-color: transparent;
+}
+
+/*---------- Carousel ---------*/
+
+.qwerty{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+/* Slideshow container */
+.slideshow-container {
+    width: 65vw;
+    position: relative;
+  }
+  
+  /* Hide the images by default */
+  .mySlides {
+    display: none;
+  }
+  
+  /* Next & previous buttons */
+  .prev, .next {
+    cursor: pointer;
+    position: absolute;
+    top: 50%;
+    width: auto;
+    margin-top: -22px;
+    padding: 16px;
+    color: white;
+    font-weight: bold;
+    font-size: 18px;
+    transition: 0.6s ease;
+    border-radius: 0 3px 3px 0;
+    user-select: none;
+    opacity: 80%;
+  }
+  
+  /* Position the "next button" to the right */
+  .next {
+    right: 0;
+    border-radius: 3px 0 0 3px;
+  }
+  
+  /* On hover, add a black background color with a little bit see-through */
+  .prev:hover, .next:hover {
+    background-color: rgba(0,0,0,0.8);
+  }
+  
+  /* Caption text */
+  .text {
+    color: #f2f2f2;
+    font-size: 1vw;
+    padding: 8px 12px;
+    position: absolute;
+    bottom: 2vw;
+    width: 100%;
+    text-align: center;
+    opacity: 90%;
+  }
+  
+  /* Number text (1/3 etc) */
+  .numbertext {
+    color: #f2f2f2;
+    font-size: 1vw;
+    margin: 1vw 0vw 0vw 1vw;
+    padding: 8px 12px;
+    position: absolute;
+    border-radius: .2vw;
+    opacity: 80%;
+  }
+  
+  /* The dots/bullets/indicators */
+  .dot {
+    cursor: pointer;
+    height: 15px;
+    width: 15px;
+    margin: 0 2px;
+    background-color: #bbb;
+    border-radius: 50%;
+    display: inline-block;
+    transition: background-color 0.6s ease;
+  }
+  
+  .active, .dot:hover {
+    background-color: #717171;
+  }
+  
+  /* Fading animation */
+  .fade {
+    animation-name: fade;
+    animation-duration: 1.5s;
+  }
+  
+  @keyframes fade {
+    from {opacity: .4} 
+    to {opacity: 1}
+  }
+
+.launcher{
+    position: absolute;
+    border-radius: 0vw 0vw .5vw .5vw;
+    background-color: black;
+    opacity: 80%;
+    color: #ffffff;
+    text-align: center;
+    top: 0vw;
+    right: 2vw;
+    font-size: 1vw;
+    padding: .4vw .6vw;
+}
+
+}
